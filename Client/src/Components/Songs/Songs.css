@@ -1,0 +1,119 @@
+#slheadcontainer {
+    width: 850px;
+    height: 370px;
+    background-color: rgb(255, 255, 251);
+    display: flex;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-top: 0px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    flex: 1 1 auto;
+    padding-right: -20px;
+  }
+  
+  #slheadcontainerone {
+    display: flex;
+  }
+  
+  #slheadimagecontainer {
+    margin-top: 30px;
+    max-width: 280px;
+    height: 280px;
+    /* background-color: blue; */
+    margin-left: 40px;
+    flex: 1 0 auto;
+  }
+  
+  #slheadname {
+    margin-top: 90px;
+    font-weight: 800;
+    font-size: 30px;
+    color: black;
+    user-select: none;
+  }
+  
+  #slheadplaypause {
+    background-color: black;
+    color: white;
+  }
+  
+  #slheadsingername {
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    margin-top: -20px;
+  }
+  
+  #slheaddetails {
+    position: absolute;
+    margin-left: 390px;
+    margin-top: 20px;
+    flex: 1 1 auto;
+  }
+  
+  #slheadimage {
+    height: 280px;
+    flex: 1 1 auto;
+    max-width: 280px;
+  }
+  
+  #slheadicons, #slheadul {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #slheadli {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: 270px;
+  }
+
+
+  @media screen and (max-width: 576px) {
+    #slheadcontainer {
+      margin: 0;
+      height: 600px;
+      max-width: 576px;
+    }
+  
+    #slheadimagecontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* flex-wrap: wrap; */
+      margin-right: -30px;
+      flex: 1 1 auto;
+    }
+  
+    #slheadcontainerone {
+      display: block;
+    }
+  
+    #slheadimage {
+      display: flex;
+      max-width: 900px;
+      flex: 1 1 auto;
+      margin-left: 50%;
+    }
+  
+    #slheaddetails {
+      margin-left: 180px;
+      margin-top: -50px;
+    }
+  
+    #slheadicons {
+      margin-top: -60px;
+      margin-left: 120px;
+    }
+  }
+  
+
+   @media screen and (max-width: 420px) {
+    #slheadcontainer {
+      margin: 0;
+      margin-top: 20px;
+      max-width: 420px;
+      
+    }
+} 

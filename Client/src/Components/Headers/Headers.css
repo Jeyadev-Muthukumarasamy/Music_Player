@@ -1,0 +1,196 @@
+body{
+  background-color: white;
+
+  margin: 0;
+  height: 100%;
+}
+
+.container{
+  display: flex;
+  /* margin-top: 20px; */
+  height: 1000px;
+  background-color: #ffffff;
+}
+#search{
+  width: 574px;
+  height: 48px;
+  padding-left: 20px;
+  border-radius: 30px;
+  margin-left: 121px;
+  position: relative;
+  border: none;
+  
+}
+
+.login{
+  margin-left: 30px;
+  width:90px;
+  padding-left: 0px;
+  background-color: #0a74ff;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  padding-left: 20px;
+}
+
+
+
+.logout{
+  margin-left: 15px;
+  border-width: 2px;
+}
+
+
+#leftdiv{
+  width: 287px;
+  height: 100px;
+  background-color: #ffffff;
+  padding-top: 1px;
+}
+.logofont{
+  padding-left: 10px;
+}
+
+
+
+#centerdiv{
+  width: 871px;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  /* position: relative; */
+}
+
+#rightdiv{
+  width: 430px;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+.sidebar {
+  width: 287px;
+  height: 200px;
+  background-color: #ffffff;
+  padding-top: 20px;
+  transition: left 0.3s, width 0.3s;
+  cursor: pointer;
+  position: relative;
+  left: -287px;
+
+}
+
+#sidebarlist1{
+  position: absolute;
+  margin-top: -3px;
+  margin-left: 10px;
+}
+
+.login{
+  width: 110px;
+  margin-top: 5px;
+  position: relative;
+
+}
+
+.sidebar.expanded {
+  width: 300px;
+  height: 700px;
+  background-color: rgb(255, 255, 255);
+  left: 0;
+}
+
+.p{
+  color: white;
+}
+
+.searchicon{
+  position: absolute;
+  margin-left: 650px;
+  display: flex;
+  align-items: center;
+  
+  margin-top: 12px;
+  z-index: 1;
+}
+
+.logo-img{
+  width: 20px;
+  margin-left: 300px;
+}
+
+
+#menu{
+  padding-top: 0px;
+  z-index: 1;
+
+}
+#secondsidebar{
+  margin-top: 90px;
+}
+
+
+
+.logofont{
+  padding-right: 20px;
+}
+
+#sidebarlist{
+  list-style: none;
+  color: black;
+  padding-top: 45px;
+  margin-right: 20px;
+  /* background-color: black; */
+  font-weight: 500;
+}
+
+.logo-img{
+  width: 20px;
+}
+
+#sidebarlist:hover{
+  color: red;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  #search {
+      width: 80%; /* Adjust the width as needed for smaller screens */
+      margin-left: auto;
+      margin-right: auto;
+      
+  }
+  #leftdiv{
+      width: 10%;
+
+  }
+  .login{
+     display: none;
+  }
+  .logout{
+      display: none;
+  }
+  
+
+}
+
+@media screen and (max-width: 1028px) {
+  #search {
+      width: 80%; /* Adjust the width as needed for smaller screens */
+      margin-left: auto;
+      margin-right: auto;
+      
+  }
+  #leftdiv{
+      width: 10%;
+
+  }
+  .login{
+     display: none;
+  }
+  .logout{
+      display: none;
+  }
+  
+
+}

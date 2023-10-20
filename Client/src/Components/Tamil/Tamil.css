@@ -1,0 +1,24 @@
+#tamilcontainer{
+    height: 800px;
+    margin-left: 300px;
+    padding-bottom: 90px;
+    margin-top: 20px;
+}
+
+#trendingcards{
+    height: 300px;
+}
+#malayalamcontainer{
+    margin-left: 260px;
+    margin-top: -490px;
+}
+
+#podu{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 998px) {
+    #tamilcontainer{
+        margin-left: 48px;
+    }
+}

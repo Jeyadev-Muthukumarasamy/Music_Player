@@ -1,0 +1,101 @@
+#rspcontainer {
+   width: 390px;
+    height: 500px;
+    background-color: rgb(244, 244, 244);
+    margin-left: 76.5%;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    margin-top: -800px;
+    position: relative;
+    
+  }
+
+
+  #rsptotalcontainer{
+    border: 1px solid black;
+  }
+  
+
+  #rspimage {
+    width: 330px;
+    height: 300px;
+    display: flex;
+    margin-left: 40px;
+    margin-top: 50px;
+    position: absolute;
+    border-radius: 40px;
+  }
+  
+  #rspqueueimage {
+    width: 20px;
+  }
+
+  #rspdetailscontainer{
+    position: absolute;
+    margin-top: 345px;
+    margin-left: 4%;
+  }
+
+  #rspsongname{
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  #rspsingername{
+    position: absolute;
+    white-space: nowrap;
+    margin-top:-10px;
+  }
+
+  #rspqueue{
+    position: absolute;
+    margin-top: 132%;
+    background-color: rgb(244, 244, 244);
+    width: 390px;
+    border-radius: 20px;
+    height: 200px;
+
+
+  }
+
+
+  #rspqueueimage{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 75px;
+    display: flex;
+    
+  }
+
+
+  #rspqueuetitlecard,#rspqueuesongname,#rspqueuesingername{
+    margin-left: 80px;
+  }
+
+  #rspqueuetitlecard{
+    margin-top: 20px;
+    position: absolute;
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  #rspqueuesongname,#rspqueuesingername{
+    margin-top: 70px;
+    position: absolute;
+    font-weight: bold;
+    margin-left: 84px;
+  }
+  #rspqueuesingername{
+    margin-top: 105px;
+  }
+
+
+
+  
+
+
+
+
+

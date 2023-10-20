@@ -1,0 +1,170 @@
+#container{
+  position: relative;
+}
+#seeallheader{
+  position: absolute;
+  margin-top: 00em;
+ 
+}
+#seeallsongs{
+  margin-top: 7em;
+  position: absolute;
+
+
+}
+
+.machaney{
+  margin-top: -200px;
+}
+
+#machha{
+  margin-top: 90px;
+}
+
+#footerseeall{
+  position: absolute;
+  margin-top: 90em;
+}
+
+#rspheader{
+  margin-top:60em;
+  position: absolute;
+  margin-left: 58%;
+  
+  
+  
+}
+
+
+
+
+
+  #slsongcontainer {
+      max-width: 850px;
+      height: 900px;
+      background-color: rgb(255, 255, 255);
+      margin-top: 20px;
+      margin-left: 410px;
+      border-radius: 20px;
+      /* border: 0.1px solid black; */
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+     
+      /* border-top: 1px solid black; */
+    }
+
+    .songsba{
+      position: absolute;
+      margin-top: -900px;
+    }
+
+    .rspcsa{
+      position: absolute;
+    }
+    /* Add styles for play icon and more icon */
+.play-icon {
+  margin-right: 40px; /* Adjust the right margin for spacing */
+}
+
+#slsongmore {
+  margin-left: 44px;
+  width: 20px; /* Adjust the left margin for spacing */
+}
+
+    
+    #slsongplaypause {
+      width: 30px;
+      height: 30px;
+      margin-left: 550px;
+      margin-top: -73px;
+    }
+
+  #playpauseslsong{
+      max-width: 800px;
+  }
+
+  #slsongplaypauses{
+      margin-top: -36px;
+      width: 20px;
+      height: 10px;
+  }
+    
+    #slsongimage {
+      max-width: 120px;
+      margin-left: 30px;
+      margin-top: 20px;
+      border-radius: 20px;
+    }
+    
+    #slsongsongname,
+    #slsongsingername {
+      margin-top: -80px;
+    margin-left: 208px;
+    font-size: 20px;
+    font-weight: 600;
+    }
+    
+    #slsongsingername {
+     
+    }
+    
+    /* Define styles for the play icon */
+    .play-icon {
+      color: #000000;
+      font-size: 2xl;
+    }
+    #slsongdetails{
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+    
+    /* Media query for smaller screens */
+    @media screen and (max-width: 567px) {
+      #slsongcontainer {
+        margin: 0;
+        margin-top: 20px;
+        max-width: 567px;
+      }
+    
+      #slsongplaypause {
+          
+        margin-left: 210px;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+    
+      
+
+
+      }
+
+      #slsongplaypauses{
+          margin-top: -16px;
+          margin-left: 182px;
+          /* border-top: 1px solid black; */
+      }
+
+
+
+
+    
+      #slsongsongname,
+      #slsongsingername {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    
+      #slsongimage {
+        width: 60px;
+        margin-top: 44px;
+      }
+    
+      /* Adjust the play icon size for smaller screens */
+      .play-icon {
+        font-size: 1.5rem;
+      }
+    }
+    

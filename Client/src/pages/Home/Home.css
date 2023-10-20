@@ -1,0 +1,7 @@
+.headerpagesidebar {
+    z-index: 2;
+  }
+  .trendingsidebar,.cnsidebar {
+    z-index: 0;
+  }
+  

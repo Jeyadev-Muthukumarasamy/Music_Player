@@ -1,0 +1,20 @@
+.swipercontainer{
+    /* width: 1000px; */
+    margin-left: 300px;
+    margin-top: -850px;
+    background-color: white;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.swiper-slide{
+    width: 100%;
+    
+    padding-left: 80px;
+    white-space: nowrap;
+
+}
+
+
+
+
