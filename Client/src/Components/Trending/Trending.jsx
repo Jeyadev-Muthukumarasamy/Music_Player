@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { HomeContext } from "../../Context/Homecontext";
+import React, { useContext, useEffect } from "react";
 import "./Trending.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css/bundle';
@@ -7,18 +6,33 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { Navigation,Scrollbar } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { HomeContext } from "../../Context/Homecontext";
 
 
 
 
 const Trending = () => {
-  const { musicData } = useContext(HomeContext);
 
-  if (!musicData) {
-    console.log("musicData is not  here", musicData);
-  } else {
-    console.log(musicData, "musicData");
+  const {musicData} = useContext(HomeContext)
+  
+  
+  const checking =()=>{
+    try{
+      if (!musicData) {
+        console.log("musicData is not  here", musicData);
+      } else {
+        console.log(musicData, "musicData");
+      }
+    }catch(error){
+      console.log(error,"afdkjb")
+    }
   }
+
+  useEffect(()=>{
+    checking()
+  },[])
+
+
   return (
     <div id="trendingcontainer">
       <div id="Trendingheading">Trending</div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { HomeContext } from "../../../Context/Homecontext";
 import { AudioContext, useAudio } from "../../../Context/AudioContext";
 import "./Seeall.css";
@@ -7,6 +7,7 @@ import Songs from "../../../Components/Songs/Songs";
 import Headers from "../../../Components/Headers/Headers";
 import Footer from "../../../Components/Footer/Footer";
 import Rightsideplaybar from "../../../Components/Rightsideplaybar/Rightsideplaybar";
+import Playlist from "../../../Components/Playlist/Playlist";
 
 const Seeall = () => {
   const { language } = useParams();
@@ -23,11 +24,15 @@ const Seeall = () => {
     setCurrentTime,
     footerSong,
     HandleFooter,
+    setIsPlaying,
+    setCurrentSong,
   } = useAudio(AudioContext);
 
   const [languageData, setLanguageData] = useState([]);
 
+  const [openMoreButtonForIndex, setOpenMoreButtonForIndex] = useState(-1);
   const [rsbsong, setRsbsong] = useState([]);
+  const [playListProps,setPlayListProps] = useState();
 
   useEffect(() => {
     if (language === "tamil") {
@@ -41,8 +46,25 @@ const Seeall = () => {
     }
   }, [language]);
 
-  // console.log(footerSong, "footer song from seeall component");
+  const navigate=useNavigate()
 
+  const handleToggle = (index) => {
+    console.log(openMoreButtonForIndex);
+    setPlayListProps(languageData[index])
+  console.log(index);
+
+    if (openMoreButtonForIndex === index) {
+      
+      setOpenMoreButtonForIndex(-1);
+    } else {
+      // If a different song's "more" button is clicked, open it and close the previous one
+      setOpenMoreButtonForIndex(index);
+    }
+  };
+
+
+  
+  
   return (
     <>
       <div id="container">
@@ -75,7 +97,12 @@ const Seeall = () => {
                       id="slsongplaypause"
                       alt="Play Icon"
                       onClick={() => {
-                        playAudio(song.songs);
+                        if (currentSong === song.songs) {
+                          setIsPlaying(!isPlaying);
+                        } else {
+                          setCurrentSong(song.songs);
+                          setIsPlaying(true);
+                        }
                         HandleFooter(song);
                       }}
                     />
@@ -84,7 +111,20 @@ const Seeall = () => {
                       id="slsongmore"
                       className="play-icon"
                       alt="More Icon"
+                      onClick={() => handleToggle(index)}
                     />
+                    {openMoreButtonForIndex === index && (
+                      <div className="dropdown-menu" id="pmenudropdown">
+                      
+                        <p id="moredropdown" onClick={()=>navigate("/playlist")}>Add to Playlist</p>
+
+                        
+                        
+                        <p id="moredropdown">Like Song</p>
+                        <p id="moredropdown">Add to Queue</p>
+                      </div>
+                    )}
+                  
                   </p>
                 </div>
                 <div id="slsongplayfurther">
@@ -94,7 +134,6 @@ const Seeall = () => {
             ))}
           </div>
 
-          {/* Audio element for playback */}
           {currentSong && isPlaying && (
             <audio
               controls
@@ -111,13 +150,13 @@ const Seeall = () => {
             </audio>
           )}
         </div>
-        <p>duration:{songDuration}</p>
+        <p>duration: {songDuration}</p>
 
-        {/* Footer component */}
+        <Footer footerSong={footerSong} />
       </div>
 
-      <Rightsideplaybar rightsidesongs={rsbsong} />
-      <Footer footerSong={footerSong} />
+      {/* <Rightsideplaybar rightsidesongs={rsbsong} /> */}
+      {/* <Playlist songs = {playListProps}/> */}
     </>
   );
 };

@@ -8,8 +8,11 @@ body{
   .container{
     display: flex;
     /* margin-top: 20px; */
-    height: 1000px;
+    height: 555px;
+ 
     background-color: #ffffff;
+    
+
   }
   #search{
     width: 574px;
@@ -54,12 +57,16 @@ body{
     justify-content: center;
     padding-top: 20px;
     /* position: relative; */
+    margin-left: 200px;
+    margin-top: -546px;
   }
+
   
   #rightdiv{
     width: 430px;
     background-color: #ffffff;
     padding-top: 20px;
+    margin-top: -546px; 
   }
   
   

@@ -77,7 +77,7 @@ const signup = async (req, res) => {
 const profile=async(req,res)=>{
     const user = await signupDetails.findById(req.userId)
     res.json({
-        message:"accessed profile"
+        message:user
     });
 }
 

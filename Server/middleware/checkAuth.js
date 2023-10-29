@@ -21,7 +21,7 @@ exports.checkAuth = (req, res, next) => {
     next();
   } catch (error) {
     console.log(error);
-    res.json({
+    res.status(401).json({
       message: "Unauthorized",
     });
   }

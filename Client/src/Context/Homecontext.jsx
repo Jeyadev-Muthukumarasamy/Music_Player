@@ -5,7 +5,7 @@ export const HomeContext = createContext();
 
 
 export const HomeContextProvider = ({ children }) => {
-    const API_URL ="http://localhost:3005/api/musicData";
+    const API_URL ="http://localhost:3005/api/musicdata";
     const [musicData, setmusicData] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 
@@ -19,6 +19,7 @@ const fetchDetails = async () => {
     
  
     setmusicData(response.data);
+    
   } catch (error) {
     console.log("error fetching the data", error);
   } finally {
@@ -41,7 +42,7 @@ if (isLoading) {
 
 
   return (
-    <HomeContext.Provider value={{ musicData }} >
+    <HomeContext.Provider value={{ musicData:musicData }} >
       {children}
     </HomeContext.Provider>
   );

@@ -8,26 +8,13 @@ const Headers = () => {
   const [expanded, setExpanded] = useState(true);
   const [login, setLogin] = useState(false);
 
+
+
+
   const toggleSidebar = () => {
-    const mobileWidthThreshold = 800;
-    const width = window.innerWidth
-
-    // Check if the window width is less than the threshold
-    if (window.innerWidth <= mobileWidthThreshold) {
-      // Code to toggle the sidebar for mobile
-      console.log('Mobile sidebar toggled');
-    
-      
-      setExpanded(!expanded);
-    } else {
-      // Code to toggle the sidebar for larger screens
-      console.log('Larger screens sidebar toggled');
-      console.log(width)
-    }
-
-
-    
+    setExpanded(!expanded);
   };
+  
 
   const setLoginOpen = (prev) => {
     setLogin((prev) => prev);

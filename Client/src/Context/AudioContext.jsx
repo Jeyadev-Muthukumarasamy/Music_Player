@@ -12,24 +12,44 @@ export const useAudio = () => {
 
 export const AudioProvider = ({ children }) => {
   const [currentSong, setCurrentSong] = useState("");
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState();
   const [songDuration, setSongDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [footerSong, setFooterSong] = useState([]);
 
+  // console.log(currentSong,"default song")
+  
+
+  // const playAudio = (src) => {
+  //   console.log(src,"idhu src oda value");
+  //   if (currentSong === src) {
+  //     // If the same song is clicked, toggle play/pause
+  //     setIsPlaying(!isPlaying);
+  //     console.log(isPlaying,src,"idhu src",currentSong,"play aagadhu yena idhu true");
+  //   } else {
+  //     // If a different song is clicked, start playing it
+  //     setCurrentSong(src);
+    
+  //     setIsPlaying(true)
+
+      
+      
+  //     console.log(isPlaying,"idhu src",src,"idhu current song",currentSong,"play aagum yena idhu false");
+      
+  //   };
+  // };
+
   const playAudio = (src) => {
-    if (currentSong === src) {
-      // If the same song is clicked, toggle play/pause
-      setIsPlaying(!isPlaying);
-    } else {
-      // If a different song is clicked, start playing it
-      setCurrentSong(src);
-      setIsPlaying(true);
-    };
+    setCurrentSong(src)
+    setIsPlaying(true)
+  
   };
+  
+  
 
   const HandleFooter = (song) => {
     setFooterSong(song);
+   
    
   };
 
@@ -53,8 +73,13 @@ export const AudioProvider = ({ children }) => {
         updateSongDuration,
         currentTime,
         updateCurrentTime,
+        setCurrentSong,
         HandleFooter, 
-        footerSong,
+        setIsPlaying,
+        setFooterSong,
+    
+        footerSong
+       
       }}
     >
       {children}

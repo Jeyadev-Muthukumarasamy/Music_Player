@@ -75,6 +75,7 @@ body{
   cursor: pointer;
   position: relative;
   left: -287px;
+ 
 
 }
 
@@ -82,6 +83,7 @@ body{
   position: absolute;
   margin-top: -3px;
   margin-left: 10px;
+
 }
 
 .login{
@@ -116,6 +118,7 @@ body{
   width: 20px;
   margin-left: 300px;
 }
+
 
 
 #menu{

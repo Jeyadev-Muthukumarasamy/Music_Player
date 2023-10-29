@@ -10,6 +10,9 @@ import SignUp from './Components/SignUp/signUp'
 import Login from './Components/Login/Login'
 import Admin from './Components/Admin.jsx/Admin'
 import Seeall from './pages/Home/Seeall/Seeall'
+import Playlist from './Components/Playlist/Playlist'
+import Playlistinput from './Components/Playlistinput/Playlistinput'
+
 
 
 
@@ -23,11 +26,14 @@ function App() {
     <>
     
     <Routes>
-    <Route path ="/" element ={<Home />}/>,
+    <Route path ="/" element ={<Login />}/>,
+    <Route path ="/home" element ={<Home />}/>,
       <Route path ="/signup" element ={<SignUp />}/>,
+      <Route path ="/playlist" element ={<Playlist />}/>,
       <Route path = "/login" element = {<Login />}/>
       <Route path ="/admin" element = {<Admin />}/>
       <Route path ="/seeall/:language" element = {<Seeall />}/>
+      <Route path = "/playlistinput" element={<Playlistinput /> }/>
     </Routes>
    
     

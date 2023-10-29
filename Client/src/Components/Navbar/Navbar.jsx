@@ -2,12 +2,22 @@ import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Navbar.css"
 
+
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const handleLogout = ()=>{
+    localStorage.clear();
+    navigate("/")
+    
+  }
   return (
-    <div>
+
+    <div className='container'>
         <div id="centerdiv">
           <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#8c8c8c" }} className='searchicon' />
           <input type="text" id="search" placeholder="Search Artists, songs, and albums" />
@@ -25,7 +35,7 @@ const Navbar = () => {
           
 
 
-          <button className="logout">Logout</button>
+          <button className="logout" onClick={handleLogout}>Logout</button>
         </div>
       
     </div>

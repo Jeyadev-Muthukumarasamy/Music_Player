@@ -14,7 +14,11 @@ const Home = () => {
   return (
     <div>
         <Headers className="headerpagesidebar"/> 
+        <div id="navbar">
         <Navbar />
+
+        </div>
+     
          <Categorynavbar className="cnsidebar"/> 
         <Trending className="trendingsidebar"/>
         <Tamil className="tamilsidebar"/>
