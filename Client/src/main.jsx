@@ -7,12 +7,17 @@ import { HomeContext, HomeContextProvider } from "./Context/Homecontext.jsx";
 import { AdminContextProvider } from "./Context/Admincontext.jsx";
 import { AudioProvider } from "./Context/AudioContext.jsx";
 import { PlaylistContextProvider } from "./Context/Playlistcontext.jsx";
+import { ThemeContextProvider } from "./Context/ThemeContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+  <ThemeContextProvider>
+
+ 
+   <HomeContextProvider>
     <AudioProvider>
       <AdminContextProvider>
-      <HomeContextProvider>
+     
         <PlaylistContextProvider>
           
 
@@ -21,8 +26,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </PlaylistContextProvider>
        
         
-        </HomeContextProvider>
+     
       </AdminContextProvider>
     </AudioProvider>
+    </HomeContextProvider>
+    </ThemeContextProvider>
+    
   </BrowserRouter>
 );

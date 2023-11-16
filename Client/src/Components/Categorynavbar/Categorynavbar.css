@@ -1,73 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Vesper+Libre&display=swap');
 
-.cncontainer {
-  display: flex;
-  flex-direction: row;
-  /* Remove fixed margins */
-  margin-left: 300px;
-  margin-top: -990px;
+.swiper-slide{
+  color: #FFFFFF;
 }
 
-.cnul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  padding: 0; /* Remove default padding */
-}
-
-.swiper-class{
-  padding: 10px 20px; /* Adjust padding for spacing */
-  font-family: 'Roboto', sans-serif;
-  cursor: pointer;
-}
-
-.cnli:hover {
-  color: red;
-}
-
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 768px) {
-  .cncontainer {
-    overflow-x: auto;
-    /* Adjust margins for smaller screens */
-    margin-right: 20px;
-    margin-left: 80px;
-    z-index: 1;
-    /* width: calc(100%/3); */
-  }
-  .swiper-slide{
-    font-size: 12px;
-    width: 12px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .cncontainer {
-    /* Remove fixed margins */
-    margin: 0;
-    overflow-x: auto;
-    margin-top: -930px;
-    margin-left: 40px;
-    
-  }
-  .cnli {
-    padding: 80px; /* Adjust padding for smaller screens */
-    
-  }
-
-  .swiper-slide{
-    font-size: 12px;
-    width: 12px;
-  }
-
-  
-}
-
-@media screen and (max-width: 900px){
-  .cncontainer{
-    margin-left: 100px;
-  }
-
-}
-
-
+/* .cnbutton{
+  color: white;
+  background-color: black;
+} */

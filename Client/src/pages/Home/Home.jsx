@@ -1,33 +1,37 @@
-import React from 'react'
-import Headers from '../../Components/Headers/Headers'
-import Categorynavbar from '../../Components/Categorynavbar/Categorynavbar'
-import Trending from '../../Components/Trending/Trending'
-import Tamil from '../../Components/Tamil/Tamil'
-import Navbar from '../../Components/Navbar/Navbar'
+import React from "react";
+import Headers from "../../Components/Headers/Headers";
+import Categorynavbar from "../../Components/Categorynavbar/Categorynavbar";
+import Trending from "../../Components/Trending/Trending";
+import Tamil from "../../Components/Tamil/Tamil";
+import Navbar from "../../Components/Navbar/Navbar";
 // import Navslider from '../../Components/Navslider/Navslider'
-
-
-
-
+import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
-        <Headers className="headerpagesidebar"/> 
-        <div id="navbar">
-        <Navbar />
-
+    <>
+      <div id="homecontainer">
+        <div id="homenavbar">
+          <Navbar />
         </div>
-     
-         <Categorynavbar className="cnsidebar"/> 
-        <Trending className="trendingsidebar"/>
-        <Tamil className="tamilsidebar"/>
-        {/* <Navslider /> */}
-        
-        
-      
-    </div>
-  )
-}
+        <div id="category">
+          <div id="headernavbar">
+            <Headers />
+          </div>
 
-export default Home
+          <div id="headercategorynavbar">
+            <Categorynavbar />
+            {/* <Trending className="trendingsidebar" /> */}
+          </div>
+      
+        </div>
+      </div>
+
+      {/* 
+    // <Tamil className="tamilsidebar" />
+    // <Navslider /> */}
+    </>
+  );
+};
+
+export default Home;

@@ -1,146 +1,149 @@
-body{
-    background-color: white;
-  
-    margin: 0;
-    height: 100%;
-  }
-  
-  .container{
-    display: flex;
-    /* margin-top: 20px; */
-    height: 555px;
- 
-    background-color: #ffffff;
+    body {
+   
+      display: flex;
+      justify-content: center;
+      /* align-items: center; Center vertically */
+      /* width: 1200px; */
+      margin-top: 30px;
+      z-index: 1;
     
 
+    
+    }
+
+    #navbarcontainerwrap {
+  
+      background-color: #212134;
+      display: grid;
+      grid-template-columns: 2fr 1fr ;
+      z-index: 1;
+      justify-content: space-between;
+     
+    }
+
+    #centerdiv {
+      background-color: #212134;
+      display: grid;
+      height: 40px;
+     
+
+    }
+
+
+    #navbarcon{
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+
+
+
+    #searchnavbar {
+      width: 600px;
+      
+    
+      height: 40px;
+      position: absolute;
+      color: #dedee4;
+      padding-left: 20px;
+      border-radius: 10px;
+      background-color: #212134;
+      border: none;
+      font-family: 'Lato', sans-serif;
+    }
+    #searchicon {
+      position: absolute;
+      color: black;
+      margin-top: 20px;
+      z-index: 1;
+      display: flex;
+      justify-self: flex-end;
+      right: 30px;
+      margin-bottom: 20px;
+
+    }
+
+    #dark,#light{
+      height: 40px;
+      width: 60px;
+    }
+
+
+#search-list-container{
+  width: 100%;
+}
+
+
+    #search-list-item {
+      width: 900px;
+      background-color:#212134;
+      position: absolute;
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 20px;
+      z-index: 2;
+    }
+
+    #centerdivwrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    #searchListMap {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      z-index: 1;
+    }
+
+    .navbarwelcome{
+      color: white;
+      font-size: 18px;
+    }
+
+    #search-list-image {
+      width: 50px;
+      height: 50px;
+    }
+
+    #rightdiv {
+      background-color: #212134;
+      display: flex;
+      justify-content: flex-end;
+      /* margin-top: -20px; */
+      align-items: center;
+      margin-top: -30px;
+    }
+
+    #navbarusername{
+      color: #8C8C8C;
+      
+    }
+
+    #search-list-song-name {
+      color: #8C8C8C;
+     
+      user-select: none;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+
+    
+@media screen and (max-width: 728px){
+
+  #navbarcontainerwrap{
+    display: grid;
+    grid-template-columns: 2.2fr 0.2fr;
   }
-  #search{
-    width: 574px;
-    height: 48px;
-    padding-left: 20px;
-    border-radius: 30px;
-    margin-left: 121px;
-    position: relative;
-    border: none;
+   #searchnavbar {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
     
   }
-  
-  .login{
-    margin-left: 30px;
-    width:90px;
-    padding-left: 0px;
-    background-color: #0a74ff;
-    color: rgb(255, 255, 255);
-    align-items: center;
-    padding-left: 20px;
-  }
-  
-  
-  
-  .logout{
-    margin-left: 15px;
-    border-width: 2px;
-  }
-  
-  
 
-  .logofont{
-    padding-left: 10px;
-  }
-  
-  
-  
-  #centerdiv{
-    width: 871px;
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    /* position: relative; */
-    margin-left: 200px;
-    margin-top: -546px;
-  }
-
-  
-  #rightdiv{
-    width: 430px;
-    background-color: #ffffff;
-    padding-top: 20px;
-    margin-top: -546px; 
-  }
-  
-  
-  .login{
-    width: 110px;
-    margin-top: 5px;
-    position: relative;
-  
-  }
-  
-  
-  
-  .p{
-    color: white;
-  }
-  
-  .searchicon{
-    position: absolute;
-    margin-left: 650px;
-    display: flex;
-    align-items: center;
-    
-    margin-top: 12px;
-    z-index: 1;
-  }
-  
-
-  
-
-  #secondsidebar{
-    margin-top: 90px;
-  }
-  
-  
-  
-  
-  
-
-  
-  @media screen and (max-width: 768px) {
-    #search {
-        width: 80%; /* Adjust the width as needed for smaller screens */
-        margin-left: auto;
-        margin-right: auto;
-        
-    }
-    #leftdiv{
-        width: 10%;
-  
-    }
-    .login{
-       display: none;
-    }
-    .logout{
-        display: none;
-    }
-    
-  
-  }
-  
-  @media screen and (max-width: 1028px) {
-    #search {
-        width: 80%; /* Adjust the width as needed for smaller screens */
-        margin-left: auto;
-        margin-right: auto;
-        
-    }
-
-    .login{
-       display: none;
-    }
-    .logout{
-        display: none;
-    }
-    
-  
-  }
+}

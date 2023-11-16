@@ -22,7 +22,7 @@ const Headers = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="headercontainer">
         <div id="leftdiv">
           {/* Sidebar with logo */}
           <div
@@ -40,7 +40,7 @@ const Headers = () => {
 
             {/* Menu items */}
             {expanded && (
-              <div>
+              <div className='sidebarflex'>
                 <ul id="menu">
                   <li id="sidebarlist"><FontAwesomeIcon icon={faPodcast} className='logofont' /> Login/Logout</li>
                   <li id="sidebarlist"><FontAwesomeIcon icon={faHouse} className='logofont' />Home</li>

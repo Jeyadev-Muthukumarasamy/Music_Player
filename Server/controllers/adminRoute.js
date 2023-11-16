@@ -1,10 +1,13 @@
-const { adminDetails } = require("../model/adminModel");
+
 const multer = require("multer");
 const { s3uploadv2 } = require("../util/s3service");
+const { adminDetails } = require("../model/adminmodel");
 
 
 const adminData = async(req,res)=>{
   try {
+    console.log(req.body);
+
     const musicdata = await adminDetails.find(req.body);
     res.json(musicdata);
     
@@ -13,9 +16,31 @@ const adminData = async(req,res)=>{
     
   }
 }
+const adminQuery = async (req, res) => {
+  try {
+    var responseData = "";
+    const { query } = req.query;
+    const musicdatas = await adminDetails.find(req.body);
+    console.log(musicdatas);
+
+    if (query !== "") {
+      responseData = musicdatas.filter((item) =>
+        item.songName.toLowerCase().includes(query.toLowerCase())
+      );
+    } else {
+      responseData = musicdatas;
+    }
+  } catch (error) {
+    console.error(error);
+    responseData = [];
+  }
+  res.json(responseData);
+};
+
 
 const adminRoute = async (req, res) => {
   try {
+    console.log(req.body)
     console.log("data entered");  
     const songName = req.body.songName;
     const singerName = req.body.singerName;
@@ -59,4 +84,4 @@ const adminRoute = async (req, res) => {
   }
 };
 
-module.exports = { adminRoute,adminData };
+module.exports = { adminRoute,adminData,adminQuery };

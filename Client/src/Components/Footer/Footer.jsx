@@ -1,79 +1,33 @@
-  import React, { useContext, useEffect, useState } from "react";
-  import "./Footer.css";
-  import { useAudio } from "../../Context/AudioContext";
-  import { AdminContext } from "../../Context/Admincontext";
-  import { HomeContext } from "../../Context/Homecontext";
+import React, { useContext, useEffect, useState } from "react";
+import "./Footer.css";
+import { useAudio } from "../../Context/AudioContext";
+import { AdminContext } from "../../Context/Admincontext";
+import { HomeContext } from "../../Context/Homecontext";
 import Rightsideplaybar from "../Rightsideplaybar/Rightsideplaybar";
 
-  const Footer = () => {
-    
-    const { musicData } = useContext(HomeContext);
-    const {setCurrentSong,currentSong,updateCurrentTime,playAudios,playAudio,setIsPlaying,setFooterSong} = useAudio(AudioContext)
-
-    const [songUpdate,setSongUpdate] = useState();
-   
-    const {footerSong,isPlaying} = useAudio(AudioContext)
-
-    console.log(footerSong,"this is footer")
-
-
-
-    
-
+const Footer = () => {
   
-
-    const HandlePrevious = () => {
-    
-      const currentSongIndex = musicData.findIndex((song) => song.songs === currentSong);
-      console.log(currentSongIndex)
-      
-      if (currentSongIndex === 0) {
-        
-        playAudio(musicData[musicData.length - 1].songs);
-        HandleFooter(footerSong);
-        setSongUpdate(musicData[musicData.length - 1]);
-        setFooterSong(musicData[musicData.length - 1])
-
-      
-
-      
-        // setFooterSong(musicData[musicData.length - 1])
-      } else {
-        console.log(musicData[currentSongIndex - 1],"on else part");
-        playAudio(musicData[currentSongIndex - 1].songs );
-        HandleFooter(footerSong);
-   
-        setIsPlaying(false);
-      
-        setSongUpdate(musicData[currentSongIndex - 1])
-        setFooterSong(musicData[currentSongIndex - 1])
-    
-     
-        // setFooterSong(musicData[musicData.length - 1])
-        
-        
-      }
-    };
-
-    
+  const {
+    setCurrentSong,
+    currentSong,
+    updateCurrentTime,
+    playAudios,
+    playAudio,
+    setIsPlaying,
+    setFooterSong,
+    HandlePrevious,
+    songUpdate,
+  } = useAudio(AudioContext);
 
 
 
-    const HandleFooter =(song)=>{
-      setFooterSong(song);
+  const { footerSong, isPlaying } = useAudio(AudioContext);
 
-    }
+  console.log(footerSong, "this is footer");
 
 
-    console.log(songUpdate,"Afdkj")
-
-   
-  
-
-    
-
-    return (
-      <>
+  return (
+    <>
       <div className="footer">
         <div id="footerone">
           {/* <img src={footerSong.songImage} alt="" id="footerimg" />
@@ -81,7 +35,7 @@ import Rightsideplaybar from "../Rightsideplaybar/Rightsideplaybar";
           <p id="singername">{footerSong.singerName}</p> */}
           <img src={footerSong.songImage} alt="" id="footerimg" />
           <p id="songname">{footerSong.songName}</p>
-          <p id="singername">{footerSong.singerName }</p>
+          <p id="singername">{footerSong.singerName}</p>
         </div>
 
         <div id="footertwo">
@@ -101,21 +55,22 @@ import Rightsideplaybar from "../Rightsideplaybar/Rightsideplaybar";
               id="footerplayicon"
               alt="Play Icon"
               onClick={() => {
-                        if (currentSong === songUpdate.songs) {
-                          // If the same song is clicked, toggle play/pause
-                          setIsPlaying(!isPlaying);
-                        } else {
-                          // If a different song is clicked, start playing it
-                          setCurrentSong(songUpdate.songs);
-                          setIsPlaying(true);
-                        }
-                        HandleFooter(song);
-                      }}
+                if (currentSong === songUpdate.songs) {
+                  // If the same song is clicked, toggle play/pause
+                  setIsPlaying(!isPlaying);
+                } else {
+                  // If a different song is clicked, start playing it
+                  setCurrentSong(songUpdate.songs);
+                  setIsPlaying(true);
+                }
+                HandleFooter(song);
+              }}
             />
             <img src="../public/next-button.png" alt="" id="footernexticon" />
           </div>
           <div id="footerprogress">{/* Add your progress bar here */}</div>
         </div>
+
         <audio
           controls
           autoPlay
@@ -133,13 +88,11 @@ import Rightsideplaybar from "../Rightsideplaybar/Rightsideplaybar";
         <div id="footerthree">
           <img src="" alt="" id="footervolume" />
         </div>
-
-        
       </div>
 
-<Rightsideplaybar songrsb = {songUpdate}/>
-</>
-    );
-  };
+      <Rightsideplaybar songrsb={songUpdate} />
+    </>
+  );
+};
 
-  export default Footer;
+export default Footer;

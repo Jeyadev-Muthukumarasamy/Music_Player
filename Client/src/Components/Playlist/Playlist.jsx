@@ -1,12 +1,14 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Playlistinput from "../Playlistinput/Playlistinput";
 import { useContext } from "react";
 import { PlaylistContext } from "../../Context/Playlistcontext";
 import "./Playlist.css";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { useAudio } from "../../Context/AudioContext";
+import Playlistsongs from "../Playlistsongs/Playlistsongs";
 
 const Playlist = () => {
   const [username, setUserName] = useState();
@@ -15,22 +17,32 @@ const Playlist = () => {
   const [userId, setUserId] = useState();
   const [openMoreButtonForIndex, setOpenMoreButtonForIndex] = useState(-1);
   const [playListNames, setPlayListNames] = useState([]);
-  const [playListId, setPlayListId] = useState([]);
+  // const [playListId, setPlayListId] = useState(null); // Initialize playListId as null
   const [playLists, setPlayLists] = useState([]);
 
-
+  const [playListSong, setPlayListSong] = useState({
+    songName: "",
+    singerName: "",
+    songCategory: "",
+    songLanguage: "",
+    songImage: "",
+    songs: "",
+  });
+  const {playListId,setProps,playListProps } = useAudio(AudioContext);
+  const [nullState, setNullState] = useState();
   const navigate = useNavigate("");
+
   const API_URL = `http://localhost:3005/api/playlistname/${userId}`;
-  const SONGAPI_URL = `http://localhost:3005/api/playlistsongs/${playListId}`
+  const SONGAPI_URL = `http://localhost:3005/api/playlistsongs/${playListId}`;
+  
+
+  console.log(playListProps, "this is playlistprops");
+
 
   useEffect(() => {
     fetchData();
     fetchPlayListNames();
   }, []);
-
- 
-
-
 
   const fetchData = async () => {
     try {
@@ -50,17 +62,20 @@ const Playlist = () => {
     }
   };
 
- 
-
   const fetchPlayListNames = async () => {
     try {
       const playlistresponse = await axios.get(API_URL);
+      console.log(playlistresponse, "this is response");
       const playlistNames = playlistresponse.data.playListnames.map(
         (playlist) => playlist.playlistname
       );
+
       const playlistNamed = playlistresponse.data.playListnames.map(
         (playlist) => playlist
       );
+
+      console.log(playlistNamed, "afwherpaopoj");
+
       setPlayLists(
         playlistNamed.reduce((acc, playlist) => {
           acc[playlist._id] = playlist;
@@ -79,6 +94,25 @@ const Playlist = () => {
     setCloseInputBox(false);
   };
 
+  const handleAddSong = async (playlistId) => {
+    try {
+      const response = await axios.post(SONGAPI_URL, {
+        playListId: playlistId, // Use the provided playlistId
+        Songs: playListProps, // Send the song data from the state
+        userId: userId,
+      });
+      console.log(playListId);
+      toast.success("added song successfully");
+
+      console.log(response.Songs); // This should contain a success message
+      // You can add a success toast message here
+     
+    } catch (error) {
+      console.error(error);
+      toast.error("Error adding the song");
+    }
+  };
+
   const handleToggle = (index) => {
     if (openMoreButtonForIndex === index) {
       setOpenMoreButtonForIndex(-1);
@@ -87,34 +121,12 @@ const Playlist = () => {
     }
   };
 
-  const handlePlaylistClick = (playlistId) => {
-    setPlayListId(playlistId);
-  };
-  console.log(playListId)
 
-  const addSongPlaylist = async()=>{
-    try{
-      const songResponse = await axios.post(SONGAPI_URL,{
-        playListId:playListId,
-        userId:userId
 
-        
+
   
-      
-      })
-      console.log("successfullt posted")
-      console.log()
-      toast.success("Successfully created Playlist")
-     
-      
 
-    }catch(error){
-      console.log(error)
-      toast.error("error adding song")
-
-    }
-    
-  }
+ 
 
   return (
     <div id="playlistcontainer">
@@ -138,8 +150,8 @@ const Playlist = () => {
                 <div
                   id="playlistdetails"
                   onClick={() => {
-                    handlePlaylistClick(playlist._id);
-                    addSongPlaylist()
+                    handleAddSong(playlist._id); // Pass the playlist._id
+                    setPlayListId(playlist._id); // Set the playListId here
                   }}
                 >
                   <p id="playlistnamename">{playlist.playlistname}</p>
@@ -157,14 +169,26 @@ const Playlist = () => {
                     <div id="playlistnamemenudropdown">
                       <p id="playlistnamemoredropdown">Delete Playlist</p>
                       <p id="playlistnamemoredropdown">Change Playlist Name</p>
-                      <p id="playlistnamemoredropdown">Open this Playlist</p>
+                   
+                        <p
+                          id="playlistnamemoredropdown"
+                          onClick={() => {
+                            console.log("Link clicked");
+                            setProps(playlist._id);
+                          }}
+                        >
+                          Open this Playlist
+                        </p>
+                      
                     </div>
-          )}
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
+
+
         <ToastContainer />
       </div>
     </div>

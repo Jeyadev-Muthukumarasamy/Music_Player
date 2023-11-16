@@ -19,6 +19,9 @@ const adminSchema = new mongoose.Schema({
   songs:{
     type:String
   }
+
+  
+
 });
 
 module.exports = {

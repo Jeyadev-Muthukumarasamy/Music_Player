@@ -8,6 +8,11 @@ import Headers from "../../../Components/Headers/Headers";
 import Footer from "../../../Components/Footer/Footer";
 import Rightsideplaybar from "../../../Components/Rightsideplaybar/Rightsideplaybar";
 import Playlist from "../../../Components/Playlist/Playlist";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
+
+
 
 const Seeall = () => {
   const { language } = useParams();
@@ -26,13 +31,15 @@ const Seeall = () => {
     HandleFooter,
     setIsPlaying,
     setCurrentSong,
+    addSongProps,
+    playListProps
   } = useAudio(AudioContext);
 
   const [languageData, setLanguageData] = useState([]);
 
   const [openMoreButtonForIndex, setOpenMoreButtonForIndex] = useState(-1);
   const [rsbsong, setRsbsong] = useState([]);
-  const [playListProps,setPlayListProps] = useState();
+ 
 
   useEffect(() => {
     if (language === "tamil") {
@@ -50,7 +57,7 @@ const Seeall = () => {
 
   const handleToggle = (index) => {
     console.log(openMoreButtonForIndex);
-    setPlayListProps(languageData[index])
+  
   console.log(index);
 
     if (openMoreButtonForIndex === index) {
@@ -63,20 +70,31 @@ const Seeall = () => {
   };
 
 
+  console.log(playListProps,"this is playlist props");
+
+  const onLike = () =>{
+
+  }
+
+  const onDislike = () =>{
+
+  }
+
+
   
   
   return (
     <>
-      <div id="container">
-        <div id="seeallheader">
+      <div >
+        {/* <div>
           <Headers />
         </div>
 
-        <div id="rspheader">
+        <div>
           <Rightsideplaybar className="rspcsa" />
-        </div>
+        </div> */}
 
-        <div id="seeallsongs">
+        <div>
           <Songs className="songsba" />
           <div id="slsongcontainer" className="songcontainer">
             {languageData.map((song, index) => (
@@ -97,7 +115,7 @@ const Seeall = () => {
                       id="slsongplaypause"
                       alt="Play Icon"
                       onClick={() => {
-                        if (currentSong === song.songs) {
+                        if (currentSong === song.songs) {  
                           setIsPlaying(!isPlaying);
                         } else {
                           setCurrentSong(song.songs);
@@ -106,13 +124,21 @@ const Seeall = () => {
                         HandleFooter(song);
                       }}
                     />
+                    <div id="seeAllLikes">
+                    <FontAwesomeIcon icon={faHeart} size="2xl" style={{color: "#d11010",}} onClick={onLike}/>
+                    <FontAwesomeIcon icon={faHeart} size="2xl" style={{color: "#000000",}} onClick={onDislike}/>
+                    <div id="morebutton">
+                      
                     <img
                       src="../public/more.png"
                       id="slsongmore"
                       className="play-icon"
                       alt="More Icon"
-                      onClick={() => handleToggle(index)}
-                    />
+                      onClick={() => {
+                        handleToggle(index);
+                        addSongProps(song);
+                      }}
+                    />  
                     {openMoreButtonForIndex === index && (
                       <div className="dropdown-menu" id="pmenudropdown">
                       
@@ -124,6 +150,17 @@ const Seeall = () => {
                         <p id="moredropdown">Add to Queue</p>
                       </div>
                     )}
+
+
+                    </div>
+
+
+
+                    </div>
+                    
+              
+
+               
                   
                   </p>
                 </div>
@@ -155,8 +192,9 @@ const Seeall = () => {
         <Footer footerSong={footerSong} />
       </div>
 
-      {/* <Rightsideplaybar rightsidesongs={rsbsong} /> */}
-      {/* <Playlist songs = {playListProps}/> */}
+      <Rightsideplaybar rightsidesongs={rsbsong} />
+
+      
     </>
   );
 };

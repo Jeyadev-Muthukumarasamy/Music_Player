@@ -1,49 +1,26 @@
+
 body{
-  background-color: white;
+  background-color: #22212F;
 
   margin: 0;
   height: 100%;
 }
 
-.container{
+.headercontainer{
   display: flex;
   /* margin-top: 20px; */
-  height: 1000px;
-  background-color: #ffffff;
-}
-#search{
-  width: 574px;
-  height: 48px;
-  padding-left: 20px;
-  border-radius: 30px;
-  margin-left: 121px;
-  position: relative;
-  border: none;
+  height: 100vh;
+  background-color: #22212F;
+
   
 }
 
-.login{
-  margin-left: 30px;
-  width:90px;
-  padding-left: 0px;
-  background-color: #0a74ff;
-  color: rgb(255, 255, 255);
-  align-items: center;
-  padding-left: 20px;
-}
-
-
-
-.logout{
-  margin-left: 15px;
-  border-width: 2px;
-}
 
 
 #leftdiv{
-  width: 287px;
+ 
   height: 100px;
-  background-color: #ffffff;
+  background-color: #22212F;
   padding-top: 1px;
 }
 .logofont{
@@ -52,24 +29,17 @@ body{
 
 
 
-#centerdiv{
-  width: 871px;
-  background-color: hsl(0, 0%, 100%);
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  /* position: relative; */
-}
+
 
 #rightdiv{
   width: 430px;
-  background-color: #ffffff;
+  background-color: #21212F;
   padding-top: 20px;
 }
 .sidebar {
   width: 287px;
   height: 200px;
-  background-color: #ffffff;
+  background-color: #21212F;
   padding-top: 20px;
   transition: left 0.3s, width 0.3s;
   cursor: pointer;
@@ -86,17 +56,12 @@ body{
 
 }
 
-.login{
-  width: 110px;
-  margin-top: 5px;
-  position: relative;
 
-}
 
 .sidebar.expanded {
   width: 300px;
   height: 700px;
-  background-color: rgb(255, 255, 255);
+  background-color: #21212F;
   left: 0;
 }
 
@@ -138,11 +103,13 @@ body{
 
 #sidebarlist{
   list-style: none;
-  color: black;
-  padding-top: 45px;
+  color: #6b6b71;
+  padding-top: 35px;
   margin-right: 20px;
   /* background-color: black; */
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-weight: 200;
+ font-family: 'Lato', sans-serif;
 }
 
 .logo-img{
@@ -150,7 +117,7 @@ body{
 }
 
 #sidebarlist:hover{
-  color: red;
+  color: #7780D8;
 }
 
 
@@ -188,12 +155,6 @@ body{
       width: 10%;
 
   }
-  .login{
-     display: none;
-  }
-  .logout{
-      display: none;
-  }
-  
+
 
 }

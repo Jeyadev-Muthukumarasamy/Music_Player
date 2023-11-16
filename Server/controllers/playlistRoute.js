@@ -1,50 +1,63 @@
-const { playlistSongDetails } = require("../model/playlistmodel");
-const { playlistnameDetails } = require("../model/playlistnamemodel");
+  const { playlistSongDetails } = require("../model/playlistmodel");
 
-
-
-const playlistData = async(req,res)=>{
+  const playlistData = async (req, res) => {
     try {
-        const {playListId,songId,userId} = req.body;
-    const playlist = await playlistnameDetails.find({_id: playListId})
+      const { playListId, Songs, userId } = req.body;
 
-    if(!playlist){
+      const playlist = await playlistSongDetails.find({ _id: playListId });
+
+      if (!playlist) {
         return res.status(404).json({
-            message:"playlist not found"
-        })
-    }
-
-    const newPlaylist = new playlistSongDetails({
-        playlistname: playListId,
-        user: userId,
-        songs:songId
-      
-      });
-      
-      console.log(newPlaylist)
-      // Save the new playlist entry
-      newPlaylist.save()
-        .then(() => {
-          console.log("Playlist created and saved.");
-        })
-        .catch((error) => {
-          console.error("Error creating playlist:", error);
+          message: "playlist not found",
         });
-      
+      }
 
-    // Save the updated playlist
+      console.log(req.body);
+
+      const newPlaylist = new playlistSongDetails({
+        playListId:playListId,
+        userId:userId,
+        Songs: Songs // Use the entire Songs object from the request
+      });
+
+      console.log(newPlaylist.playListId, "received");
+
+      // Check if the Songs array is undefined or empty before saving the playlist
+      if (newPlaylist.Songs !== undefined && newPlaylist.Songs.length > 0) {
+        await newPlaylist.save();
+        console.log("received");
+      } else {
+        // Reject the request because the Songs array is empty
+      }
+
+      res.json({ message: "Song added to the playlist successfully" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  };
+
+  const getSongs = async (req, res) => {
+    try {
+      console.log("mafaprihfaefd");
+      const { playListId } = req.params;
+      console.log(req.params)
+  
+      const songs = await playlistSongDetails.find({ playListId });
+  
+      if (!songs) {
+        return res.status(404).json({ message: "Songs not found" });
+      }
+  
+      res.json(songs);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  };
+  
   
 
-    res.json({ message: 'Song added to playlist successfully' });
-        
-    } catch (error) {
+  
 
-        console.error(error);
-        res.status(500).json({ message: 'Internal server error' });
-
-        
-    }
-}
-
-module.exports ={playlistData}
-
+  module.exports = { playlistData,getSongs };

@@ -1,51 +1,40 @@
-import React from 'react';
-import './Categorynavbar.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation,Pagination } from 'swiper';
-import 'swiper/css/navigation';
+import "./Categorynavbar.css"
 
+// Import Swiper styles
+import 'swiper/css';
 
-export const Categorynavbar = () => {
+const Categorynavbar = () => {
   return (
-    <div className='cncontainer'>
-      <Swiper
-        // modules={[Navigation,Pagination]}
-        spaceBetween={50}
-        navigation
-        width={null}
-        
-        scrollbar={{ draggable: false }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-        slidesPerView={2}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            
-          },
-          490: {
-            slidesPerView: 3, 
-            spaceBetween:90
-          },
-          720:{
-            slidesPerView:4,
-            spaceBetween:60
-          }
-        }}
-      >
-        <SwiperSlide>All</SwiperSlide>
-        <SwiperSlide>Trending songs</SwiperSlide>
-        <SwiperSlide>Old Songs</SwiperSlide>
-        <SwiperSlide>New Songs</SwiperSlide>
-        <SwiperSlide>Mood genre</SwiperSlide>
-        <SwiperSlide>Billie eilish playlist</SwiperSlide>
-        <SwiperSlide>Podcast</SwiperSlide>
-        <SwiperSlide>Rock</SwiperSlide>
-        <SwiperSlide>Jazz</SwiperSlide>
-      </Swiper>
+    <div id="swipercontainer">
+        <Swiper
+      spaceBetween={0}
+      slidesPerView={5}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+      navigation={{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }}
+      
+    
+    >
+      <SwiperSlide><button className='cnbutton'>Tamil Songs</button></SwiperSlide>
+      <SwiperSlide><button className='cnbutton'>Billie eilish</button></SwiperSlide>
+      <SwiperSlide><button className='cnbutton'>Rahman Hits</button></SwiperSlide>
+      <SwiperSlide><button className='cnbutton'>Sithara</button></SwiperSlide>
+      <SwiperSlide><button className='cnbutton'>Mollywood</button></SwiperSlide>
+      <SwiperSlide><button className='cnbutton'>Arjit Singh</button></SwiperSlide>
+      <SwiperSlide><button className='cnbutton'>XXXTentacion</button></SwiperSlide>
+      {/* <SwiperSlide><button>slide1</button></SwiperSlide> */}
+     
+    
+      ...
+    </Swiper>
+
     </div>
+  
   );
 };
 
-export default Categorynavbar;
+export default Categorynavbar
