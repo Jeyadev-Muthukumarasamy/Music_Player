@@ -9,19 +9,26 @@ body{
 .headercontainer{
   display: flex;
   /* margin-top: 20px; */
-  height: 100vh;
+  height: 80vh;
   background-color: #22212F;
+  justify-content: flex-start;
+  z-index: 20;
+  
 
   
 }
 
 
 
+
 #leftdiv{
  
-  height: 100px;
+  height: 70vh;
   background-color: #22212F;
   padding-top: 1px;
+  display: flex;
+  justify-content: flex-end;
+  
 }
 .logofont{
   padding-left: 10px;
@@ -30,14 +37,8 @@ body{
 
 
 
-
-#rightdiv{
-  width: 430px;
-  background-color: #21212F;
-  padding-top: 20px;
-}
 .sidebar {
-  width: 287px;
+  width: 20vw;
   height: 200px;
   background-color: #21212F;
   padding-top: 20px;
@@ -47,6 +48,12 @@ body{
   left: -287px;
  
 
+}
+
+#openheader{
+  color: white;
+  font-weight: 700;
+  margin-left: 120px;
 }
 
 #sidebarlist1{
@@ -59,10 +66,11 @@ body{
 
 
 .sidebar.expanded {
-  width: 300px;
-  height: 700px;
+  width: 20vw;
+  height: 660px;
   background-color: #21212F;
   left: 0;
+  z-index: 2; 
 }
 
 .p{
@@ -107,9 +115,11 @@ body{
   padding-top: 35px;
   margin-right: 20px;
   /* background-color: black; */
+  
   /* font-weight: 500; */
   font-weight: 200;
  font-family: 'Lato', sans-serif;
+ z-index: 2;
 }
 
 .logo-img{
@@ -125,7 +135,7 @@ body{
 
 @media screen and (max-width: 768px) {
   #search {
-      width: 80%; /* Adjust the width as needed for smaller screens */
+      width: 80vw; /* Adjust the width as needed for smaller screens */
       margin-left: auto;
       margin-right: auto;
       

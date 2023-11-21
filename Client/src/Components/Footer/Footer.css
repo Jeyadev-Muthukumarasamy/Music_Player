@@ -1,95 +1,89 @@
-.footer{
-    background-color: rgb(255, 255, 255);
-    height: 200px;
-    display: flex;
-    flex-direction: column;
+#footercontainer{
     position: absolute;
-    margin-top: 90em;
-}   
+    display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+    height: 120px;
+    background-color: #35354b;
+
+    
+
+}
+
+#footerimage{
+
+    /* background-color: antiquewhite; */
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    
+}
 
 #footerimg{
-    width: 70px;
-    height: 70px;
-    margin-top: 120px;
-    position: absolute;
+    height: 100%;
     margin-left: 40px;
-    padding-bottom: 20px;
+}
 
+#footersongdetails{
+    /* background-color: aqua;   */
+    display: flex;
+    
+}
+
+#footersongtwoflex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 20px;
+    /* background-color: white; */
+    width: 300px;
 
 }
 
-#footerprogress{
-    width: 100%;
-    color: black;
-    height: 200px;
-    margin-top: -500px;
-}
-.hp_slide{
-    width:100%;
-    background:white;
-    height:25px;
-}
-.hp_range{
-    width:0;
-    background:black;
-    height:25px;
+#footerthreeicons{
+    /* background-color: blueviolet; */
 }
 
-
-#songname{
-    margin-left: 188px;
-    margin-top: 120px;
-    font-weight: 1000;
-    font-size: large;
-    position: absolute;
-    color: black;
-  
-   
-   
-   
-}
-
-
-#singername{
-    margin-left: 168px;
-    margin-top: 160px;
-    font-weight: 600;
-    font-size: large;
-    color: black;
-}
-#footertwo{
-    width: 800px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 500px;
-    margin-top: -100px;
+#footerimg{
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    z-index: 10;
+    margin-top: 10px;
+   
 }
 
-#footerplayicon{
-    width: 40px;
-    cursor: pointer;
+#footersongname{
+    color: white;
+}
+
+
+#footersingername{
+    color: #A9A9A9;
+    display: flex;
+    justify-self: center;
+    align-self: flex-start;
     
 }
 
-#footerpreviousicon{
-    width: 40px;
-    cursor: pointer;
-    position: absolute;
-    margin-left: -70px;
 
+
+#footersongdetailsflex{
+    display: flex;
+    flex-direction: column;
+
+   
+    display: flex;
+    justify-content: space-around;
 }
 
-#footernexticon{
-    
-    width: 40px;
-    cursor: pointer;
-    position: absolute;
-    margin-left: 40px;
-
+#footerpreviousicon,#footerplayicon,#footernexticon{
+    width: 20px;
+    height: 20px;
 }
 
-
-
-
+audio{
+    display: none;
+}

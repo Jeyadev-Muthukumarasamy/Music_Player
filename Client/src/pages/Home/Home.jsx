@@ -6,30 +6,38 @@ import Tamil from "../../Components/Tamil/Tamil";
 import Navbar from "../../Components/Navbar/Navbar";
 // import Navslider from '../../Components/Navslider/Navslider'
 import "./Home.css";
+import Queue from "../../Components/Queue/Queue";
 
 const Home = () => {
   return (
     <>
-      <div id="homecontainer">
-        <div id="homenavbar">
-          <Navbar />
-        </div>
-        <div id="category">
-          <div id="headernavbar">
+        <div id="homecontainer">
+
+          <div id="navbarhome">
             <Headers />
-          </div>
 
-          <div id="headercategorynavbar">
-            <Categorynavbar />
-            {/* <Trending className="trendingsidebar" /> */}
+            {/* <Navbar /> */}
           </div>
-      
+          <div id="secondlefthome">
+            <div id="slh">
+              <Navbar />
+              
+
+            </div>
+            <div id="sls">
+              <Trending />
+              <Tamil />
+
+            </div>
+            {/* <Trending /> */}
+            {/* <Tamil /> */}
+          </div>
+          <div id="thirdlefthome">
+            <Queue />
+            
+          </div>
+          
         </div>
-      </div>
-
-      {/* 
-    // <Tamil className="tamilsidebar" />
-    // <Navslider /> */}
     </>
   );
 };

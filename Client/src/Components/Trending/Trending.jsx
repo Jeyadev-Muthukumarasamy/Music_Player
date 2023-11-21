@@ -1,13 +1,18 @@
 import React, { useContext, useEffect } from "react";
 import "./Trending.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css/bundle';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import { Navigation,Scrollbar } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { HomeContext } from "../../Context/Homecontext";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// import './styles.css';
+
+// import required modules
+import { Navigation, Pagination } from 'swiper/modules';
 
 
 
@@ -35,52 +40,20 @@ const Trending = () => {
 
   return (
     <div id="trendingcontainer">
-      <div id="Trendingheading">Trending</div>
-    
-      <div id="seeall">See All</div>
+      <p id="trendingheading">New Releases</p>
+  
 
 
     
-      <Swiper
-      
-       modules={[Navigation, Scrollbar]}
-       spaceBetween={200}
-       slidesPerView={6}
-       navigation
-       pagination={{ clickable: true }}
-       scrollbar={{ draggable: true }}
-       onSwiper={(swiper) => console.log(swiper)}
-       onSlideChange={() => console.log('slide change')}
-       breakpoints={{
-         320: {
-           slidesPerView: 1,
-           spaceBetween: 40,
-         },
-         390:{
-          slidesPerView:1,
-          spaceBetween: 40,
-          
-         },
-         490: {
-           slidesPerView: 2 ,
-           spaceBetween: 70,
-         },
-
-         590:{
-          spaceBetween: 80
-
-         },
-
-         720:{
-          slidesPerView:3,
-          spaceBetween:80,
-          
-         },
-         850: {
-           slidesPerView: 3,
-           spaceBetween: 260,
-         }
-       }}
+        <Swiper
+        
+        spaceBetween={0}
+        slidesPerView={4}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+        navigation={true}
+ 
+        modules={[Navigation, Pagination]}
      >
 
       

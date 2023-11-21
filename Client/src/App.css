@@ -1,18 +1,5 @@
-/* AppStyles.css */
-
-body {
+body{
     margin: 0;
-    transition: background-color 0.3s ease;
-    min-height: 100vh;
-  }
-  
-  .dark-theme {
-    background-color: #1a1a1a;
-    color: #ffffff;
-  }
-  
-  .light-theme {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
+    padding: 0;
+    box-sizing: border-box;
+}

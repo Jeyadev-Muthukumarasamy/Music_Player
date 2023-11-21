@@ -1,24 +1,52 @@
-#tamilcontainer{
-    height: 800px;
-    margin-left: 300px;
-    padding-bottom: 90px;
-    margin-top: 20px;
-}
+#Trendingheading {
+    display: flex;
+    justify-content: space-between;
+    padding: -10px;
+  }
+  
+  #tamilcontainer a {
+    color: #c6c6c6;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 42px;
+    font-weight: 20px;
+  }
 
-#trendingcards{
-    height: 300px;
-}
-#malayalamcontainer{
-    margin-left: 260px;
-    margin-top: -490px;
-}
+  #flextamilcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #malayalamcontainer a {
+    color: #c6c6c6;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 42px;
+    font-weight: 20px;
+  }
 
-#podu{
-    cursor: pointer;
-}
+  .languageheading{
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: white;
 
-@media screen and (max-width: 998px) {
-    #tamilcontainer{
-        margin-left: 48px;
-    }
-}
+  }
+
+
+  

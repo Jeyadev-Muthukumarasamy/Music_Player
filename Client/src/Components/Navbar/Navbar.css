@@ -13,16 +13,16 @@
 
     #navbarcontainerwrap {
   
-      background-color: #212134;
+      background-color: #22212F;
       display: grid;
-      grid-template-columns: 2fr 1fr ;
+      grid-template-columns: 60vw 40vw ;
       z-index: 1;
       justify-content: space-between;
      
     }
 
     #centerdiv {
-      background-color: #212134;
+      background-color: #22212F;
       display: grid;
       height: 40px;
      
@@ -40,7 +40,8 @@
 
 
     #searchnavbar {
-      width: 600px;
+      width: 38vw;
+      grid-column-start: 1;
       
     
       height: 40px;
@@ -48,9 +49,9 @@
       color: #dedee4;
       padding-left: 20px;
       border-radius: 10px;
-      background-color: #212134;
+      background-color: #22212F;
       border: none;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
     #searchicon {
       position: absolute;
@@ -76,8 +77,8 @@
 
 
     #search-list-item {
-      width: 900px;
-      background-color:#212134;
+      width: 90vw;
+      background-color:#22212F;
       position: absolute;
       margin-top: 60px;
       display: flex;
@@ -110,16 +111,23 @@
     }
 
     #rightdiv {
-      background-color: #212134;
+      background-color: #22212F;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       /* margin-top: -20px; */
       align-items: center;
-      margin-top: -30px;
+      
+
+    }
+
+    #pnavbar{
+      display: flex;
+      justify-content: flex-start;
     }
 
     #navbarusername{
       color: #8C8C8C;
+      
       
     }
 

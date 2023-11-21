@@ -6,7 +6,6 @@ import { HomeContext } from "../../Context/Homecontext";
 import Rightsideplaybar from "../Rightsideplaybar/Rightsideplaybar";
 
 const Footer = () => {
-  
   const {
     setCurrentSong,
     currentSong,
@@ -17,29 +16,26 @@ const Footer = () => {
     setFooterSong,
     HandlePrevious,
     songUpdate,
+    HandleFooter,
   } = useAudio(AudioContext);
-
-
 
   const { footerSong, isPlaying } = useAudio(AudioContext);
 
   console.log(footerSong, "this is footer");
 
-
   return (
     <>
-      <div className="footer">
-        <div id="footerone">
-          {/* <img src={footerSong.songImage} alt="" id="footerimg" />
-          <p id="songname">{footerSong.songName}</p> 
-          <p id="singername">{footerSong.singerName}</p> */}
+      <div id="footercontainer">
+        <div id="footerimage">
           <img src={footerSong.songImage} alt="" id="footerimg" />
-          <p id="songname">{footerSong.songName}</p>
-          <p id="singername">{footerSong.singerName}</p>
         </div>
 
-        <div id="footertwo">
-          <div id="footericons">
+        <div id="footersongdetails">
+          <div id="footersongdetailsflex">
+            <p id="footersongname">{footerSong.songName}</p>
+            <p id="footersingername">{footerSong.singerName}</p>
+          </div>
+          <div id="footersongtwoflex">
             <img
               src="../public/rewind-button.png"
               alt=""
@@ -68,29 +64,28 @@ const Footer = () => {
             />
             <img src="../public/next-button.png" alt="" id="footernexticon" />
           </div>
-          <div id="footerprogress">{/* Add your progress bar here */}</div>
         </div>
 
-        <audio
-          controls
-          autoPlay
-          onLoadedMetadata={(e) => {
-            updateSongDuration(e.target.duration);
-          }}
-          onTimeUpdate={(e) => {
-            updateCurrentTime(e.target.currentTime);
-          }}
-        >
-          <source src={footerSong.songs} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
+        <div id="footerthreeicons">
+          <audio
+            controls
+            autoPlay
+            onLoadedMetadata={(e) => {
+              updateSongDuration(e.target.duration);
+            }}
+            onTimeUpdate={(e) => {
+              updateCurrentTime(e.target.currentTime);
+            }}
+          >
+            <source src={footerSong.songs} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
 
-        <div id="footerthree">
           <img src="" alt="" id="footervolume" />
+
+          {/* <Rightsideplaybar songrsb={songUpdate} />  */}
         </div>
       </div>
-
-      <Rightsideplaybar songrsb={songUpdate} />
     </>
   );
 };

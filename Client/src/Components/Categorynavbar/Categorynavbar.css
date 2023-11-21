@@ -3,7 +3,12 @@
   color: #FFFFFF;
 }
 
-/* .cnbutton{
-  color: white;
-  background-color: black;
-} */
+.cnbutton{
+  color: black;
+  background-color: rgb(214, 214, 214);
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+  border:none;
+  background-size: cover;
+}

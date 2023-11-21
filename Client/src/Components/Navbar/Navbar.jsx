@@ -10,7 +10,7 @@ import { ThemeContext } from "../../Context/ThemeContext";
 const Navbar = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchList, setSearchList] = useState([]);
-  const API_URL = "http://localhost:3005/api/musicdatasearch";
+  const API_URL = "http://localhosst:3005/api/musicdatasearch";
   const navigate = useNavigate();
 
   const { handleTheme, isDarkTheme } = useContext(ThemeContext);
@@ -48,9 +48,7 @@ const Navbar = () => {
   return (
     <div id="navbarcontainerwrap">
       <div id="navbarcon">
-
-        
-      <div className="search-container">
+        <div className="search-container">
           <input
             type="text"
             id="searchnavbar"
@@ -67,15 +65,18 @@ const Navbar = () => {
               ))}
             </div>
           )}
-      
-      </div>
+        </div>
 
-      <div id="rightdiv" className="right-container">
-      <p className="navbarwelcome">Welcome <span id="navbarusername">User</span></p>
-      </div>
+        <div id="rightdiv" className="right-container">
+          <div id="pnavbar">
+          <p className="navbarwelcome">
+            Welcome <span id="navbarusername">User</span>
+          </p>
 
+          </div>
+          
+        </div>
       </div>
-      
     </div>
   );
 };

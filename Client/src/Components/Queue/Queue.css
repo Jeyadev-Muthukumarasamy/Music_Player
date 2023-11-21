@@ -1,0 +1,53 @@
+#queuecontainer{
+    display: grid;
+    grid-template-columns: 4vw 12vw 4vw;
+    margin-left: 4px;
+    
+
+
+}
+
+#yourqueue{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+#queuesongscontainer{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 30px;
+
+}
+
+#queueimage{
+    width: 40px;
+    height: 40px;
+    justify-self: flex-start;
+    margin-top: 10px;
+    position: absolute;
+}
+
+#queuesongname,#queuesingername,#queueheadingone,#queueseeall{
+    color: white;
+}
+
+#queuesongname,#queuesingername{
+    font-size: 12px;
+    margin-left: 50px;
+  
+   
+    white-space: nowrap;
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+}
+
+#queuesingername{
+    padding-top: 30px;
+    color: #68686B;
+}

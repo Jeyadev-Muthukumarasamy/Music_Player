@@ -1,152 +1,48 @@
+
 #trendingcontainer{
-    
-    /* background-color: rgb(222, 150, 56); */
-    margin-left: 290px;
-    z-index: 1;
-    display: flex;
-    margin-top: 50px;
-    height: 400px;
-   
-
-}
-
-#seeall{
-    position: absolute;
-    margin-left: 500px;
-    margin-top: -15px;
-    color: red;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-
-
-#Trendingheading{
-    margin-left: 30px;
     margin-top: -20px;
 
 }
 
-#trendingcards{
-    width: 200px;
-    height: 200px;
-    /* background-color: blue; */
-    
-     margin-top: 40px;
-}
-    
 
 
-#trendingimages{
-    width: 170px;
-    height: 150px;
-    margin-left: 50px;
-
+#trendingheading{
+    color: #68686B;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
 }
 
-
-#trendingsingername{
-    margin-left: 30px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.swiper-button-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* background-color: #000; */
+    color: #fff;
     font-size: 20px;
-}
-
-#trendingsong{
-    margin-left: 30px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
-    font-size: 20px;
-    color:#666666;
-}
-
- @media screen and (max-width: 945px) {
-    .swiper-wrapper{
-        margin-right: 240px;
-    }
-    #trendingcontainer{
-        margin-left: 00px;
-    }
-   
-    
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .swiper-button-prev {
+    /* Same styles as .swiper-button-next */
   }
   
 
-  @media screen and (max-width: 998px) {
-    #trendingcontainer{
-        margin-left: -48px;
-    }
 
+#trendingimages{
+    width: 120px;
+    height: 120px;
+}
 
+#trendingsingername,#trendingsong{
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
 
-   
-
-
-  }
-
-  @media screen and (max-width: 445px) {
-   
-    #trendingsingername{
-        font-size: 16px;
-       
-
-    }
-    #trendingsong{
-        font-size: 16px;
-    }
-    
-
-   
-
-
-  }
-
-  @media screen and (max-width: 490px) {
-   
-    #trendingsingername{
-        font-size: 16px;
-       
-
-    }
-    #trendingsong{
-        font-size: 16px;
-    }
-
-    #seeall{
-        margin-right: 900px;
-    }
-    
-
-   
-
-
-  }
-
-  @media screen and (max-width: 620px) {
-   
-    #trendingsingername{
-        font-size: 16px;
-       
-
-    }
-    #trendingsong{
-        font-size: 16px;
-    }
-
-    .swiper-wrapper{
-        padding-left: 20px;
-    }
-    
-
-   
-
-
-  }
- 
- 
- 
-
-
+#trendingsong{
+    color: #68686B;
+}
 
 

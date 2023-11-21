@@ -1,0 +1,113 @@
+#seeallcontainerone {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* width: 100%; */
+
+  /* background-color: rgb(98, 181, 254); */
+  padding: 10px;
+}
+
+#slimagegrid {
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gridthreeflex {
+  background-color: blueviolet;
+}
+
+#slsongcontainerimage {
+  /* background-color: aqua; */
+  padding: 10px;
+  /* padding-top: 10px; */
+  align-items: space-between;
+  display: flex;
+  /* background-color: aquamarine; */
+}
+
+#slsongimage {
+  width: 60px;
+  height: 60px;
+  justify-self: center;
+  /* position: absolute; */
+}
+
+#slsonggridthree {
+  /* background-color: rgb(33, 37, 37); */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  /* margin-top: -90px; */
+  align-items: center;
+}
+
+#slsongplaypause {
+  width: 20px;
+  height: 20px;
+}
+
+#slsongdetails {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  align-items: center;
+  /* margin-top: -90px; */
+  position: relative;
+  justify-content: space-between;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+  /* background-color: brown; */
+}
+
+#slsongsongname {
+  color: white;
+
+  justify-self: center;
+}
+
+#slsongsingername {
+  color: rgb(169, 169, 169);
+}
+
+#slsonglike {
+}
+#slsongmore{
+  margin: -5px;
+}
+#pmenudropdown {
+  transition: 1s;
+  margin-top: 250px;
+  width: 100%;
+ 
+  opacity: 0.8;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+
+#moredropdown {
+  white-space: nowrap;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+
+  font-size: 20px;
+  animation-name: slideup;
+  animation-duration: 0.53s;
+  animation-timing-function: ease-in-out;
+  user-select: none;
+}
+
+#moredropdown:hover {
+  opacity: 0.7;
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(200px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}

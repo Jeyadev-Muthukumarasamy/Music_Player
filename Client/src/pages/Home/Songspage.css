@@ -1,0 +1,27 @@
+#songspagecontainer{
+    display: grid;
+    grid-template-columns: 25vw 55vw 26vw;
+    height: 100%;
+}
+
+#songsgridone{
+    /* background-color: aqua; */
+    padding-left: 20px;
+    z-index: 20;
+}
+
+#songsgridtwo{
+    margin-top: 40px;
+
+}
+
+#footer{
+    position: sticky;
+    bottom: 0; /* Stick the footer to the bottom */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    background-color: white;
+    width: 100%;
+}

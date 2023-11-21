@@ -9,6 +9,7 @@ const queueSchema = new mongoose.Schema({
     },
     Songs: [
         {
+         
           songName: String,
           singerName: String,
           songCategory: String,
