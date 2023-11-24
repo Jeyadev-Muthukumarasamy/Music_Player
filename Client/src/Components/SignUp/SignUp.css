@@ -1,67 +1,93 @@
-/* Signup Container */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* form{
+  width: 100%;
+} */
+
 #signupcontainer {
-    width: 847px;
-    height: 542px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 190px;
-    border: 2px solid #e6e5e5;
-    margin-top: 40px;
-  }
+  /* background-color: white; */
+  width: 100%;
+  background-size: cover;
+  display: grid;
+  margin-top: 20px;
   
-  /* Signup Part One */
-  #signuppartone {
-    display: flex;
-    flex-direction: column;
-    width: 454px;
-    height: 542px;
-    position: absolute;
-    margin-top: 81px;
-  }
+
+}
+
+#signuplabel{
+  color: rgb(223, 216, 216);
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  /* margin-left: -300px; */
   
-  /* Input Fields */
-  #signupusername, #signuppassword, #signupname, #signupphonenumber {
-    padding-top: 30px;
-    margin-top: 20px;
-    margin-left: 12px;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    font-family: 'Roboto', sans-serif;
-    padding-left: 30px;
-    font-size: 16px;
-    border-color: #e6e5e5;
-    color: #99999e;
-  }
+
+}
+
+
+#divusername {
+ 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: black; */
+  height: 140px;
+  border-color: white;
+
+}
+
+#signupinput {
+  height: 37px;
+  width: 40%;
+  outline: none;
+  margin-top: -10px;
+  background-color: #22212F;
+  padding-left: 20px;
+  color: rgb(223, 222, 222);
+
+}
+#signupinput:focus{
+  border-color: white;
+ 
+}
+
+.danger {
+  color: rgb(179, 105, 105);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+#signupbutton{
+  background-color: #69E7CC;
+width: 200px;
+  height: 40px;
+  color: #011327;
+  font-weight: 600;
+  cursor: pointer;
+  border-color: none;
+  border: none;
+}
+
+#divbuttonsignup{
+  display: flex;
   
-  #signupusername, #signuppassword, #signupname, #signupphonenumber:active {
-    border-top: none;
-    border-left: none;
-  }
+  cursor: pointer;
   
-  /* Signup Button */
-  #signuploginsignup {
-    margin-top: 50px;
-    width: 414px;
-    margin-left: 30px;
-    background-color: #E72C30;
-    color: white;
+}
+#signupbutton:hover{
+  opacity: 0.7;
+  transition: 0.7s;
+  border-color: none;
+  border: none;
+
+}
+
+
+/* Media Query for Responsive Design */
+@media (min-width: 600px) {
+  #signupcontainer {
+    width: 80%; /* Adjust the width for larger screens if needed */
   }
-  
-  #signuploginsignup:hover {
-    opacity: 0.6;
-    transition: 0.7s;
-  }
-  
-  #signuploginsignup:active {
-    border: none;
-    background-color: rgb(255, 0, 0);
-  }
-  
-  /* Headphone Boy Image */
-  #signupheadphoneboy {
-    width: 494px;
-    height: 540px;
-    margin-left: 480px;
-    /* margin-top: px; */
-  }
-  
+}
