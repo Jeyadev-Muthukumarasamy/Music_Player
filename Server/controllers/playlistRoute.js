@@ -2,37 +2,58 @@
 
   const playlistData = async (req, res) => {
     try {
-      const { playListId, Songs, userId } = req.body;
 
-      const playlist = await playlistSongDetails.find({ _id: playListId });
+      const { userId, playListId } = req.body;
+      console.log(req.body)
 
-      if (!playlist) {
-        return res.status(404).json({
-          message: "playlist not found",
-        });
-      }
-
-      console.log(req.body);
-
-      const newPlaylist = new playlistSongDetails({
+      // Check if the song already exists in the playlist for the specific user
+      const playlist = await playlistSongDetails.findOne({
         playListId:playListId,
-        userId:userId,
-        Songs: Songs // Use the entire Songs object from the request
+
+        
+        "Songs.songName": songName,
       });
+      console.log(playlist)
+     
+  
+      if (playlist) {
+        // Song already exists in the playlist for the user
+        console.log("yess")
+         res.json({
+          message: "Song already exists in the playlist for the user",
+        })}
+        else{
+          res.json({
+            message:"Data can be posted"
+          })
+        }
+    //   }else{
 
-      console.log(newPlaylist.playListId, "received");
+    //     const newPlaylist = new playlistSongDetails({
+    //       playListId:playListId,
+    //       userId:userId,
+    //       // Songs: songName // Use the entire Songs object from the request
+    //     });
+  
+    //     console.log(newPlaylist.playListId, "received");
+  
+    //     // Check if the Songs array is undefined or empty before saving the playlist
+    //     if (newPlaylist.Songs !== undefined && newPlaylist.Songs.length > 0) {
+    //       await newPlaylist.save();
+    //       console.log("received");
+    //     } else {
+    //       // Reject the request because the Songs array is empty
+    //     }
+  
+    //     res.json({ message: "Song added to the playlist successfully" });
 
-      // Check if the Songs array is undefined or empty before saving the playlist
-      if (newPlaylist.Songs !== undefined && newPlaylist.Songs.length > 0) {
-        await newPlaylist.save();
-        console.log("received");
-      } else {
-        // Reject the request because the Songs array is empty
-      }
+    //   }
 
-      res.json({ message: "Song added to the playlist successfully" });
+    //   // console.log(req.body);
+
+      
     } catch (error) {
-      console.error(error);
+     
       res.status(500).json({ message: "Internal server error" });
     }
   };

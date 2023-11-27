@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#playlistscontainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+
+#mode{
+    background-color: azure;
+
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    #playlistscontainer{
+        display: grid;
+        grid-template-columns:0fr 1fr 0fr;
+    }
+
+
+
+    #playlistscontainerplaylist{
+        grid-column-start: 0;
+    }
+
+
+    
+}

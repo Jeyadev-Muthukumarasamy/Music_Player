@@ -31,7 +31,7 @@ router.post("/upload", upload.fields([{ name: "songImage" }, { name: "songFile" 
 router.post("/jib/:songId/:userId",adminPost)
 router.get("/musicdata", adminData);
 router.post("/playlistname", playlistName);
-router.post("/playlistsongs/:playlistId", playlistData);
+router.post("/pls", playlistData);
 router.get("/playlistsongs/:playListId", getSongs);
 router.get("/musicdatasearch", adminQuery);
 router.get("/getqueue/:userId",getAdminPost);

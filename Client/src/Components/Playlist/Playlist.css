@@ -1,91 +1,60 @@
-#playlistnamescontainer{
-    width: 60%;
-    height: 100px;
-    background-color: rgb(231, 231, 231);
+.playlistsongscontainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #22212F;
+    
+    width: 100%;
+    margin-top: 20px;
+
+     
+}
+
+.playlist-item{
+    /* background-color: rgb(53, 156, 235); */
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 100%;
+   
+}
+
+.playlist-songs-count{
+    color: rgb(119, 119, 119);
+}
+
+.playlistimage{
+    width: 40%;
+    height: 40%;
+  
+    margin: 20px;
+    
+}
+.playlist-details{
     position: relative;
-    cursor: pointer;
-}
+    width: 100%;
 
-#playlistnamescontainer:hover{
-    background-color: rgb(231, 231, 231);   
+   
     
 }
 
-#playlistnametopcontainer{
-    background-color: rgb(231, 231, 231);   
+.playlist-name{
+    color: #cdcdcd;
+    font-family: 'Lato', sans-serif;;
+    font-size: 14px;
 }
 
-#playlistnamename{
+
+.more-button {
+    position: relative;
+    margin-top: 20px;
+    color: gray;
+  }
+  
+  .playlist-name-menu-dropdown {
+    /* Other styles */
+    margin-left: 20px;
+    position: absolute;
+    top: 100%;
     left: 0;
-}
-
-
-
-#playlistnamemenudropdown{
-    position: absolute;
-    margin-left: 400px;
-    margin-top: 50px;
-    white-space: no-wrap;
-}
-
-#playlistnamemoredropdown{
-    white-space: nowrap;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 30px;
-  font-size: 16px;
-  animation-name: slideup;
-  animation-duration: 0.53s;
-  animation-timing-function: ease-in-out;
-  user-select: none;
-
-
-
-}
-
-
-#playlistcount{
-    display: flex;
-    justify-content: center;
-    flex: 1fr;
-}
-
-#playlistimage{
-    width: 90px;
-    margin-left: -350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7px;
-
-}
-
-#playlistdetails{
-    position: absolute;
-    margin-left: -350px;
-    user-select: none;
-}
-
-#playlistnamename{
-    font-weight: 600;
-}
-
-#slsongmore  {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    margin-left: 320px;
-    margin-top: 40px;
-    cursor: pointer;
-    user-select: none;
-    
-}
-
-
-#playlistnamesongscount{
-    font-size: 13px;
-}
-
-
-
+    /* Other styles */
+  }
+  
